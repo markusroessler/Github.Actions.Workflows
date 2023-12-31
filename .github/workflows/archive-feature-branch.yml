@@ -20,10 +20,10 @@ jobs:
         with:
           ref: ${{ inputs.git-branch }}
 
-      # - name: Create archive ref
-      #   run: |
-      #     git update-ref "refs/archive/${{ inputs.git-branch }}" "${{ inputs.git-branch }}"
-      #     git push origin "refs/archive/${{ inputs.git-branch }}:refs/archive/${{ inputs.git-branch }}"
+      - name: Create archive ref
+        run: |
+          git update-ref "refs/archive/${{ inputs.git-branch }}" "${{ inputs.git-branch }}"
+          git push origin "refs/archive/${{ inputs.git-branch }}:refs/archive/${{ inputs.git-branch }}"
 
-      # - name: Delete feature branch
-      #   run: git push -d origin "${{ inputs.git-branch }}"
+      - name: Delete feature branch
+        run: git push -d origin "${{ inputs.git-branch }}"

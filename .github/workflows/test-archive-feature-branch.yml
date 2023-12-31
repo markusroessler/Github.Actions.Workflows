@@ -1,6 +1,6 @@
 name: Test "Archive feature branch"
 
-on: push
+on: workflow_dispatch
 
 permissions:
   contents: write
