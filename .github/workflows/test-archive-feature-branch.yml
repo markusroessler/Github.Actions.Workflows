@@ -1,7 +1,6 @@
-name: Archive feature branch (manual)
+name: Test "Archive feature branch"
 
-on:
-  workflow_dispatch:
+on: push
 
 permissions:
   contents: write
@@ -10,5 +9,5 @@ jobs:
   call-archive-workflow:
     uses: ./.github/workflows/archive-feature-branch.yml
     with:
-      git-branch: ${{ github.ref_name }}
+      git-branch: temp/8dbbd74
       
