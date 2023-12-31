@@ -1,4 +1,4 @@
-name: Archive feature branch
+name: Archive feature- or bugfix-branch
 
 on:
   workflow_call:
