@@ -9,5 +9,5 @@ jobs:
   call-archive-workflow:
     uses: ./.github/workflows/archive-feature-branch.yml
     with:
-      git-branch: temp/8dbbd74
+      git-branch: ${{ github.ref_name }}
       
