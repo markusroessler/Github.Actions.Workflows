@@ -1,0 +1,13 @@
+name: Test "Archive feature branch"
+
+on: workflow_dispatch
+
+permissions:
+  contents: write
+
+jobs:
+  call-archive-workflow:
+    uses: ./.github/workflows/archive-feature-branch.yml
+    with:
+      git-branch: ${{ github.ref_name }}
+      
