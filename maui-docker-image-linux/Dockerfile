@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:9.0
+FROM mcr.microsoft.com/dotnet/sdk:10.0
 
 RUN dotnet workload install maui-android
 
@@ -13,4 +13,4 @@ RUN cd /usr/lib/android-sdk \
     && mv temp/cmdline-tools/* cmdline-tools/latest/ \
     && cd cmdline-tools/latest/bin \
     && yes | ./sdkmanager --licenses \
-    && ./sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+    && ./sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
