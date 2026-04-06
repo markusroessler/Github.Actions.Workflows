@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   archive-feature-branch:
-    if: ${{ (startsWith(inputs.git-branch, 'feature/') || startsWith(inputs.git-branch, 'bugfix/')) && (github.event.pull_request == null || github.event.pull_request.merged) }}
+    if: ${{ (startsWith(inputs.git-branch, 'feature/') || startsWith(inputs.git-branch, 'bugfix/') || startsWith(inputs.git-branch, 'copilot/')) && (github.event.pull_request == null || github.event.pull_request.merged || github.event.pull_request.closed) }}
     runs-on: ubuntu-latest
 
     steps:
