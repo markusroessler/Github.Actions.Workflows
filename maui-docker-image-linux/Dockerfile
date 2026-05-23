@@ -6,6 +6,7 @@ RUN apt-get update \
     && apt-get install -yq --no-install-recommends \
         android-sdk \
         npm \
+        unzip \
     && rm -rf /var/lib/apt/lists/*
 
 # note: commandline tools from https://developer.android.com/studio#command-tools
