@@ -8,7 +8,7 @@ RUN apt update \
 
 # note: commandline tools from https://developer.android.com/studio#command-tools
 RUN cd /usr/lib/android-sdk \
-    && wget https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip \ 
+    && wget https://dl.google.com/android/repository/commandlinetools-linux-14742923_latest.zip \ 
     && unzip commandlinetools-linux-13114758_latest.zip -d temp \
     && mkdir -p cmdline-tools/latest \
     && mv temp/cmdline-tools/* cmdline-tools/latest/ \
