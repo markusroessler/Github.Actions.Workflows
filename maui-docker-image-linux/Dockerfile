@@ -17,3 +17,5 @@ RUN cd /usr/lib/android-sdk \
     && cd cmdline-tools/latest/bin \
     && yes | ./sdkmanager --licenses \
     && ./sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
+
+ENV ANDROID_HOME=/usr/lib/android-sdk
