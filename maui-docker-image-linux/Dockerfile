@@ -2,15 +2,20 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0
 
 RUN dotnet workload install maui-android
 
-RUN apt update \
-    && apt -yq install android-sdk
+RUN apt-get update \
+    && apt-get install -yq \
+        android-sdk \
+        npm \
+    && rm -rf /var/lib/apt/lists/*
 
 # note: commandline tools from https://developer.android.com/studio#command-tools
 RUN cd /usr/lib/android-sdk \
-    && wget https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip \ 
-    && unzip commandlinetools-linux-13114758_latest.zip -d temp \
+    && wget https://dl.google.com/android/repository/commandlinetools-linux-14742923_latest.zip \ 
+    && unzip commandlinetools-linux-14742923_latest.zip -d temp \
     && mkdir -p cmdline-tools/latest \
     && mv temp/cmdline-tools/* cmdline-tools/latest/ \
     && cd cmdline-tools/latest/bin \
     && yes | ./sdkmanager --licenses \
     && ./sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
+
+ENV ANDROID_HOME=/usr/lib/android-sdk
