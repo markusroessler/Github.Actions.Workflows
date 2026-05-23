@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0
 RUN dotnet workload install maui-android
 
 RUN apt update \
-    && apt -yq install android-sdk
+    && apt -yq install android-sdk \
     && apt -yq install npm
 
 # note: commandline tools from https://developer.android.com/studio#command-tools
