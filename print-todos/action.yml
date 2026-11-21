@@ -1,0 +1,9 @@
+name: "Print TODOs"
+description: "Prints todos to GITHUB_STEP_SUMMARY"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Print TODOs
+      shell: bash
+      run: bash ${{ github.action_path }}/scripts/print-todos.sh >> $GITHUB_STEP_SUMMARY
